@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Inicio - Turismo Lebu">
+  <section class="bg-gradient-to-br from-blue-500 to-blue-700 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">
+        ¡Bienvenido a Lebu!
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+        Descubre la magia de la costa chilena. Playas, montañas, cultura y tradición 
+        te esperan en esta hermosa ciudad.
+      </p>
+      <a
+        href="/mapa"
+        class="inline-block bg-white text-blue-700 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
+      >
+        Explorar Mapa
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+        ¿Por qué visitar Lebu?
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center p-6">
+          <div class="text-5xl mb-4">🏖️</div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Playas Únicas</h3>
+          <p class="text-gray-600">
+            Disfruta de arenas negras y paisajes costeros impresionantes.
+          </p>
+        </div>
+        <div class="text-center p-6">
+          <div class="text-5xl mb-4">⛰️</div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Naturaleza</h3>
+          <p class="text-gray-600">
+            Explora cavernas, montañas y bosques nativos llenos de historia.
+          </p>
+        </div>
+        <div class="text-center p-6">
+          <div class="text-5xl mb-4">🏛️</div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Cultura</h3>
+          <p class="text-gray-600">
+            Conoce la rica historia minera y las tradiciones locales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
