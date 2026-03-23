@@ -1,4 +1,5 @@
 ---
+// Lógica de Astro - Importaciones base
 import Header from '../components/Header.svelte';
 import Footer from '../components/Footer.svelte';
 import '../styles/global.css';
@@ -7,9 +8,14 @@ interface Props {
   title?: string;
 }
 
+// Recibe la propiedad 'title' desde cualquier página (ej. index.astro) para forjar el metatag
 const { title = 'Turismo Lebu' } = Astro.props;
 ---
 
+<!-- LAYOUT PRINCIPAL DEL SITIO
+     - Este archivo actúa como plantilla "wrapper" forzosa.
+     - Contiene el HEAD de HTML, metadatos y fuentes como Outlet Base.
+-->
 <!doctype html>
 <html lang="es">
   <head>

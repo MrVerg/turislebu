@@ -1,9 +1,12 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
+  // State: controla la visibilidad del menú en celular e identifica si el usuario bajó la ventana.
   let isOpen = false;
   let scrolled = false;
 
+  // El ciclo de vida 'onMount' de Svelte registra el evento para cambiar la opacidad
+  // de la cabecera cuando superemos los 20 píxeles, logrando un efecto "Glassmorphism"
   onMount(() => {
     const handleScroll = () => {
       scrolled = window.scrollY > 20;
@@ -12,6 +15,8 @@
     return () => window.removeEventListener('scroll', handleScroll);
   });
 
+  // Array centralizado de rutas, si se necesitan agregar más páginas (Ej: Contacto),
+  // este es el lugar para agregarlas.
   const navLinks = [
     { name: 'Inicio', href: '/' },
     { name: 'Mapa', href: '/mapa' },
@@ -19,6 +24,11 @@
   ];
 </script>
 
+<!-- 
+  Barra de Navegación Dinámica. Utiliza clases ternarias de Tailwind CSS para aplicar:
+  - En Inicio/Top: `bg-transparent` con letra blanca
+  - Al dar Scroll: `bg-white/80` difuminado con shadow
+-->
 <nav class="duration-500 transition-all {scrolled ? 'fixed top-0 w-full z-50 shadow-lg bg-white/80 backdrop-blur-md py-1' : 'absolute w-full z-50 bg-transparent py-4'}">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-2 h-auto">
