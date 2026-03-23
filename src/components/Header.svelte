@@ -19,21 +19,20 @@
   ];
 </script>
 
-<nav class="duration-300 {scrolled ? 'fixed top-0 w-full z-50 shadow-md bg-white' : 'absolute bg-transparent'}">
+<nav class="duration-500 transition-all {scrolled ? 'fixed top-0 w-full z-50 shadow-lg bg-white/80 backdrop-blur-md py-1' : 'absolute w-full z-50 bg-transparent py-4'}">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
+    <div class="flex justify-between items-center py-2 h-auto">
       <!-- Logo -->
-      <a href="/" class="flex items-center space-x-2">
-        <span class="text-2xl">🏖️</span>
-        <span class="font-bold text-xl text-gray-800">Turismo Lebu</span>
+      <a href="/" class="flex items-center space-x-2 group shrink-0">
+        <img src="/logo.png" alt="Turismo Lebu Logo" class="h-28 md:h-40 w-auto object-contain transition-transform group-hover:scale-105" />
       </a>
 
       <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center space-x-8">
+      <div class="hidden md:flex items-center space-x-1">
         {#each navLinks as link}
           <a
             href={link.href}
-            class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+            class="{scrolled ? 'text-gray-700 hover:text-lebu-magenta' : 'text-gray-100 hover:text-white hover:bg-white/20'} font-semibold px-4 py-2 rounded-full transition-all duration-300"
           >
             {link.name}
           </a>
@@ -42,7 +41,7 @@
 
       <!-- Mobile Menu Button -->
       <button
-        class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+        class="md:hidden p-2 rounded-lg {scrolled ? 'text-lebu-dark hover:bg-gray-100' : 'text-white hover:bg-white/20'} transition-colors"
         on:click={() => isOpen = !isOpen}
         aria-label="Toggle menu"
       >
